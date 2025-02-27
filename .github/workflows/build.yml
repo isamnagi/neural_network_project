@@ -13,3 +13,5 @@ jobs:
         run: g++ -o neural_network main.cpp neural_network.cpp
       - name: Run
         run: ./neural_network
+      - name: Run tests
+        run: ./test_neural_network
