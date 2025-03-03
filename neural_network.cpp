@@ -1,6 +1,7 @@
 #include "neural_network.h"
 #include <cmath>
 #include <random>
+#include <pybind11/stl.h>
 
 NeuralNetwork::NeuralNetwork(int input_size, int hidden_size, int output_size)
     : input_size(input_size), hidden_size(hidden_size), output_size(output_size) {

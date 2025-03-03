@@ -6,8 +6,12 @@
 class NeuralNetwork {
 public:
     NeuralNetwork(int input_size, int hidden_size, int output_size);
-    void train(const std::vector<std::vector<double>>& training_data, const std::vector<std::vector<double>>& labels);
-    void test(const std::vector<std::vector<double>>& test_data);
+    std::vector<double> forward(const std::vector<double>& input);
+
+    // Add these getter methods
+    int getInputSize() const { return input_size; }
+    int getHiddenSize() const { return hidden_size; }
+    int getOutputSize() const { return output_size; }
 
 private:
     int input_size;
@@ -16,8 +20,6 @@ private:
     std::vector<std::vector<double>> weights_input_hidden;
     std::vector<std::vector<double>> weights_hidden_output;
 
-    std::vector<double> forward(const std::vector<double>& input);
-    void backward(const std::vector<double>& output, const std::vector<double>& target);
     double sigmoid(double x);
     double sigmoid_derivative(double x);
 };
